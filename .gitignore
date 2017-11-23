@@ -1,0 +1,15 @@
+### Project build directory
+/public/
+
+### IDE settings
+/.idea/
+
+### Vendor resources
+/node_modules/
+npm-debug.log
+
+### Composer
+/php/vendor/
+
+### SparkPost, email recipients config
+/php/email_recipients.php
