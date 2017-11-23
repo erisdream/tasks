@@ -24,6 +24,7 @@
 <img src="../../nice-mice.jpg" alt="Nice mice">
 <img src="http://hello.com/beautiful-house.jpg" alt="">
 <img src="happy-architect-and-his-wife.gif" alt="">
+<input type="checkbox" checked id="myCheckBox">
 <script>
    $('img').each(function() {
         let picAdress = $(this).attr('src');
@@ -33,6 +34,16 @@
         $(this).attr({'alt': picName});
     });
 
+</script>
+<script>
+    var $cb = $('#myCheckBox');
+
+    console.log($cb.prop('checked'), $cb.attr('checked'));
+
+    $cb.prop('checked', false);
+
+    // Что будет и почему?
+    console.log($cb.prop('checked'), $cb.attr('checked'));
 </script>
 </body>
 
