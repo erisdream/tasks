@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+        img {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #CCC;
+        }
+    </style>
+</head>
+
+<body>
+<p>Картинок нет, зато так видно альты.</p>
+<hr>
+<img src="../big-fish-and-fisherman.png" alt="">
+<img src="../../nice-mice.jpg" alt="Nice mice">
+<img src="http://hello.com/beautiful-house.jpg" alt="">
+<img src="happy-architect-and-his-wife.gif" alt="">
+<script>
+   $('img').each(function() {
+        let picAdress = $(this).attr('src');
+        let picName = picAdress.substring(picAdress.lastIndexOf('/')+1, picAdress.lastIndexOf('.'));
+        picName = picName.charAt(0).toUpperCase() + picName.substring(1);
+        picName = picName.replace(/\-/g, " ");
+        $(this).attr({'alt': picName});
+    });
+
+</script>
+</body>
+
+</html>
