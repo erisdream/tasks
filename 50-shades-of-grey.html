@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .shade {
+            font: 14px/1.4 Consolas, Monaco, monospace;
+            padding: 10px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+<script>
+    const $body = $('body');
+    for (let i = 1; i <= 50; i++) {
+        $('<div>', {
+            class: 'shade',
+            html: `Оттенок №${i}`
+        }).appendTo($body);
+    }
+    let colors = [220, 220, 220];
+    $('.shade').css({
+        backgroundColor: function (index, currentValue) {
+            let bgColor;
+            colors[0] = colors[0] - 2;
+            colors[1] = colors[1] - 2;
+            colors[2] = colors[2] - 2;
+            bgColor = 'RGB('+colors.join(',')+')';
+            return bgColor;
+        }
+    });
+</script>
+</body>
+
+</html>
